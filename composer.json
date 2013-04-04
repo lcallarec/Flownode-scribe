@@ -1,0 +1,17 @@
+{
+    "name": "flownode/flownode-scribe",
+    "description": "",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "lcallarec",
+            "email": "l.callarec@gmail.com"
+        }
+    ],
+     "autoload": {
+        "psr-0": {"Flownode": "lib/"}
+    },
+    "require": {
+      "tcpdf/tcpdf": "dev-master"
+    }
+}
