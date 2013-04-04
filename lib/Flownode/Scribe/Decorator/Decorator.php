@@ -64,20 +64,33 @@ abstract class Decorator
   }
 
   /**
+   * Execute the decorator(s)
    *
-   * @param mixed $rules
-   * @param mixed $arg1
-   * @param mixed $arg2
-   * @param mixed $arg3
-   * @param mixed $arg4
+   * Rules can be string or hash of strings for easier reuse
+   * In some cases, we don't want the Closure to be registered, so we can give a Closure as argument
+   *
+   * @param Writer  $writer
+   * @param mixed   $rules  Can be a string or a hash of string, or a Closure
+   * @param mixed   $arg1
+   * @param mixed   $arg2
+   * @param mixed   $arg3
+   * @param mixed   $arg4
    */
   public function execute($writer, $rules, &$arg1 = null, &$arg2 = null, &$arg3 = null, &$arg4 = null)
   {
-    $closures = $this->get($rules);
-
-    foreach($closures as $name => $closure)
+    if(!is_callable($rules))
     {
-      $closure($writer, $arg1, $arg2, $arg3, $arg4);
+      $closures = $this->get($rules);
+
+      foreach($closures as $closure)
+      {
+        $closure($writer, $arg1, $arg2, $arg3, $arg4);
+      }
     }
+    else
+    {
+      $rules($writer, $arg1, $arg2, $arg3, $arg4);
+    }
+
   }
 }
