@@ -32,19 +32,19 @@ class Column
 
   /**
    *
-   * @var Closure
+   * @var string
    */
   protected $valueDecorator;
 
   /**
    *
-   * @var Closure
+   * @var string
    */
   protected $columnDecorator;
 
   /**
    *
-   * @var mixed
+   * @var Item
    */
   protected $element;
 
