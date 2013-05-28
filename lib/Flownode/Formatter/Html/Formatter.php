@@ -7,11 +7,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Flownode\Scribe\Formatter\Html;
+namespace Flownode\Formatter\Html;
 
 use
-  Flownode\Scribe\Formatter\Formatter as AbstractFormatter,
-  Flownode\Scribe\Formatter\Html\GridFormatter,
+  Flownode\Formatter\Formatter as AbstractFormatter,
+  Flownode\Formatter\Html\GridFormatter,
   Flownode\Writer\HtmlWriter as Writer
 ;
 

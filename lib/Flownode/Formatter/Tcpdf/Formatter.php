@@ -7,12 +7,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Flownode\Scribe\Formatter\Tcpdf;
+namespace Flownode\Formatter\Tcpdf;
 
 use
-  Flownode\Scribe\Formatter\Formatter as AbstractFormatter,
+  Flownode\Formatter\Formatter as AbstractFormatter,
   Flownode\Writer\TcpdfWriter as Writer,
-  Flownode\Scribe\Formatter\Tcpdf\GridFormatter
+  Flownode\Formatter\Tcpdf\GridFormatter
 ;
 
 /**

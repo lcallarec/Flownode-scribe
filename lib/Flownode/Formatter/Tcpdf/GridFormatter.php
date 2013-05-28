@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Flownode\Scribe\Formatter\Tcpdf;
+namespace Flownode\Formatter\Tcpdf;
 
 use
   Flownode\Scribe\Decorator\Decorator
@@ -22,7 +22,7 @@ class GridFormatter
 {
   /**
    *
-   * @var Flownode\Scribe\Formatter\Html\Formatter;
+   * @var Flownode\Formatter\Html\Formatter;
    */
   protected $formatter;
 
