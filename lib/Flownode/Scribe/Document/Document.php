@@ -12,7 +12,7 @@ namespace Flownode\Scribe\Document;
 
 use
   Flownode\Scribe\Document\Element\ElementInterface,
-  Flownode\Scribe\Formatter\FormatterInterface,
+  Flownode\Formatter\FormatterInterface,
   Flownode\Scribe\Manager\Manager
 ;
 
@@ -42,7 +42,7 @@ class Document implements ElementInterface, \ArrayAccess
   protected $position = 0;
 
   /**
-   * \Flownode\Scribe\Formatter\FormatterInterface
+   * \Flownode\Formatter\FormatterInterface
    * @var FormatterInterface
    */
   protected $formatter;
@@ -55,7 +55,7 @@ class Document implements ElementInterface, \ArrayAccess
 
   /**
    *
-   * @param \Flownode\Scribe\Formatter\FormatterInterface $formatter
+   * @param \Flownode\Formatter\FormatterInterface $formatter
    */
   public function __construct(FormatterInterface $formatter = null)
   {
@@ -113,7 +113,7 @@ class Document implements ElementInterface, \ArrayAccess
 
   /**
    *
-   * @param \Flownode\Scribe\Formatter\FormatterInterface $formatter
+   * @param \Flownode\Formatter\FormatterInterface $formatter
    * @return self
    */
   public function setFormatter(FormatterInterface $formatter)

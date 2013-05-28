@@ -10,7 +10,7 @@
 namespace Flownode\Scribe\Manager;
 
 use
-  Flownode\Scribe\Formatter\FormatterInterface
+  Flownode\Formatter\FormatterInterface
 ;
 /**
  *
@@ -21,14 +21,14 @@ abstract class Manager
   const NAME = null;
 
   /**
-   * \Flownode\Scribe\Formatter\FormatterInterface
+   * \Flownode\Formatter\FormatterInterface
    * @var FormatterInterface
    */
   protected $formatter;
 
   /**
    *
-   * @param \Flownode\Scribe\Formatter\FormatterInterface $formatter
+   * @param \Flownode\Formatter\FormatterInterface $formatter
    * @return self
    */
   public function setFormatter(FormatterInterface $formatter)

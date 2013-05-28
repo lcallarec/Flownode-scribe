@@ -9,7 +9,7 @@
  */
 namespace Flownode\Scribe\Document\Element;
 use
-  Flownode\Scribe\Formatter\FormatterInterface
+  Flownode\Formatter\FormatterInterface
 ;
 /**
  *
@@ -22,7 +22,7 @@ interface ElementInterface
   /**
    * Set the element formatter
    *
-   * @param \Flownode\Scribe\Formatter\FormatterInterface $formatter
+   * @param \Flownode\Formatter\FormatterInterface $formatter
    * @return self
    */
   public function setFormatter(FormatterInterface $formatter);

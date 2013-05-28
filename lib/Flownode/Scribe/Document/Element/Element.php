@@ -10,7 +10,7 @@
 namespace Flownode\Scribe\Document\Element;
 
 use
-  Flownode\Scribe\Formatter\FormatterInterface,
+  Flownode\Formatter\FormatterInterface,
   Flownode\Scribe\Document\Document
 ;
 /**
@@ -23,7 +23,7 @@ abstract class Element extends \ArrayObject implements ElementInterface
   /**
    * Formatter
    *
-   * @var Flownode\Scribe\Formatter\FormatterInterface
+   * @var Flownode\Formatter\FormatterInterface
    */
   protected $formatter = null;
 
