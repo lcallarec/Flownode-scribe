@@ -2,7 +2,7 @@
 /**
  * This file is part of the Flownode package
  *
- * (c) Laurent CALLAREC <lcallarec@gmail.com>
+ * (c) Laurent CALLAREC <l.callarec@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,19 +12,13 @@ use
   Flownode\Scribe\Document\Element\Element
 ;
 /**
- * Write document titles
+ * Write document header
  *
- * @author Laurent CALLAREC <lcallarec@gmail.com>
+ * @author Laurent CALLAREC <l.callarec@gmail.com>
  */
-class Cover extends Element
+class Header extends Element
 {
-  const TYPE = 'cover';
-
-  /**
-   *
-   * @var array
-   */
-  protected $toc;
+  const TYPE = 'footer';
 
   /**
    *
@@ -33,11 +27,6 @@ class Cover extends Element
   public function __construct($rules = 'default')
   {
     $this->rules = $rules;
-  }
-
-  public function getTitles()
-  {
-    return $this->document->getManager('title')->toc;
   }
 
 }
