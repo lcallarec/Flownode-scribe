@@ -7,25 +7,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Flownode\Scribe\Document\Grid;
+namespace Flownode\Component\Grid;
 
-use
-  Flownode\Scribe\Document\Element\Element,
-  Flownode\Scribe\Document\Grid\Column
-;
 /**
  *
  * @author Laurent CALLAREC <lcallarec@gmail.com>
  */
-class Grid extends Element
+trait GridTrait
 {
-  const TYPE = 'grid';
-
-  protected $formatter = null;
-
-  protected $columns = array();
-
-  protected $rowDecorator = null;
 
   /**
    * Add headers, only one set of headers can be set
@@ -53,7 +42,7 @@ class Grid extends Element
 
   /**
    *
-   * @return Flownode\Scribe\Document\Grid\Column
+   * @return Flownode\Component\Grid\Column
    */
   public function getColumns()
   {

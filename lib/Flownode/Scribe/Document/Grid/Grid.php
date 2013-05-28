@@ -10,8 +10,7 @@
 namespace Flownode\Scribe\Document\Grid;
 
 use
-  Flownode\Scribe\Document\Element\Element,
-  Flownode\Scribe\Document\Grid\Column
+  Flownode\Scribe\Document\Element\Element
 ;
 /**
  *
@@ -19,6 +18,8 @@ use
  */
 class Grid extends Element
 {
+  use \Flownode\Component\Grid\GridTrait;
+
   const TYPE = 'grid';
 
   protected $formatter = null;
@@ -27,36 +28,4 @@ class Grid extends Element
 
   protected $rowDecorator = null;
 
-  /**
-   * Add headers, only one set of headers can be set
-   * @param array $headers
-   * @return \Flownode\Scribe\Document\Grid\Grid
-   */
-  public function addColumn($name, $columnId, $dataKey, $valueDecorator = null, $columnDecorator = null, $element = null)
-  {
-    return $this->columns[$columnId] = new Column($name, $dataKey, $valueDecorator, $columnDecorator, $element);
-  }
-
-  /**
-   *
-   * @param string $decorator
-   */
-  public function setRowDecorator($decorator = null)
-  {
-    $this->rowDecorator = $decorator;
-  }
-
-  public function getRowDecorator()
-  {
-    return $this->rowDecorator;
-  }
-
-  /**
-   *
-   * @return Flownode\Scribe\Document\Grid\Column
-   */
-  public function getColumns()
-  {
-    return $this->columns;
-  }
 }
