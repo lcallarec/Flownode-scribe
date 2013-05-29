@@ -135,7 +135,7 @@ class Formatter extends AbstractFormatter
    * @param \Flownode\Scribe\Element\Paragraph $grid
    * @return void
    */
-  public function addGrid(\Flownode\Scribe\Element\Grid\Grid $grid)
+  public function addGrid(\Flownode\Scribe\Element\Grid $grid)
   {
 
     $table = $this->writer->open('table');
