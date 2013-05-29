@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Flownode\Scribe\Document;
+namespace Flownode\Scribe;
 
 use
   Flownode\Scribe\Document\Element\ElementInterface,

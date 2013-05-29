@@ -11,7 +11,7 @@ namespace Flownode\Scribe\Document\Element;
 
 use
   Flownode\Formatter\FormatterInterface,
-  Flownode\Scribe\Document\Document
+  Flownode\Scribe\Document
 ;
 /**
  * Abstract class inherited by all Elements

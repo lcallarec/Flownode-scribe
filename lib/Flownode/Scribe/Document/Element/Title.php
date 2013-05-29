@@ -10,7 +10,7 @@
 namespace Flownode\Scribe\Document\Element;
 use
   Flownode\Scribe\Document\Element\Element,
-  Flownode\Scribe\Document\Document
+  Flownode\Scribe\Document
 ;
 /**
  * Write document titles
