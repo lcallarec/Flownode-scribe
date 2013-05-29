@@ -7,9 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Flownode\Scribe\Document\Element;
+namespace Flownode\Scribe\Element;
 use
-  Flownode\Scribe\Document\Element\Element
+  Flownode\Scribe\Element\Element
 ;
 /**
  * Write document header

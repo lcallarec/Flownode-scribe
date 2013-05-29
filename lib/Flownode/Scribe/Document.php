@@ -11,7 +11,7 @@
 namespace Flownode\Scribe;
 
 use
-  Flownode\Scribe\Document\Element\ElementInterface,
+  Flownode\Scribe\Element\ElementInterface,
   Flownode\Formatter\FormatterInterface,
   Flownode\Scribe\Manager\Manager
 ;
@@ -28,7 +28,7 @@ class Document implements ElementInterface, \ArrayAccess
 {
   /**
    * Container all elements
-   * @var \Flownode\Scribe\Document\Element\Element
+   * @var \Flownode\Scribe\Element\Element
    */
   protected $elements = array();
 
@@ -65,9 +65,9 @@ class Document implements ElementInterface, \ArrayAccess
   /**
    * Add a component to the document
    *
-   * @param \Flownode\Scribe\Document\Element\ElementInterface $element
+   * @param \Flownode\Scribe\Element\ElementInterface $element
    * @param int $position   The element position ; is used to assign an element before another
-   * @return \Flownode\Scribe\Document\Element\ElementInterface
+   * @return \Flownode\Scribe\Element\ElementInterface
    */
   public function add(ElementInterface $element, $position = null)
   {

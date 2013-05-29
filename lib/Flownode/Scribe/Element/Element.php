@@ -7,7 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Flownode\Scribe\Document\Element;
+namespace Flownode\Scribe\Element;
 
 use
   Flownode\Formatter\FormatterInterface,
@@ -107,7 +107,7 @@ abstract class Element extends \ArrayObject implements ElementInterface
    * Assign an id to this element
    *
    * @param string $id
-   * @return \Flownode\Scribe\Document\Element\Element
+   * @return \Flownode\Scribe\Element\Element
    */
   public function setId($id)
   {
@@ -135,7 +135,7 @@ abstract class Element extends \ArrayObject implements ElementInterface
    * Assign a new flowmode
    *
    * @param string $flowMode
-   * @return \Flownode\Scribe\Document\Element\Element
+   * @return \Flownode\Scribe\Element\Element
    */
   public function setFlowMode($flowMode)
   {

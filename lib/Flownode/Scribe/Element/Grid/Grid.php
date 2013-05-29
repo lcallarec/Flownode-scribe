@@ -7,10 +7,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Flownode\Scribe\Document\Element\Grid;
+namespace Flownode\Scribe\Element\Grid;
 
 use
-  Flownode\Scribe\Document\Element\Element
+  Flownode\Scribe\Element\Element
 ;
 /**
  *

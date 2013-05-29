@@ -12,7 +12,7 @@ namespace Flownode\Formatter;
 use
   Flownode\Formatter\FormatterInterface,
   Flownode\Scribe\Decorator\Decorator,
-  Flownode\Scribe\Document\Element\ElementInterface
+  Flownode\Scribe\Element\ElementInterface
 ;
 /**
  * PDF Formatter using TCPDF
@@ -55,7 +55,7 @@ abstract class Formatter implements FormatterInterface
 
   /**
    * Call the formatter according to Element type
-   * @param \Flownode\Scribe\Document\Element\ElementInterface $element
+   * @param \Flownode\Scribe\Element\ElementInterface $element
    */
   public function format(ElementInterface $element, $position)
   {

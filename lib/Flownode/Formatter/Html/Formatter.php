@@ -35,10 +35,10 @@ class Formatter extends AbstractFormatter
 
   /**
    *
-   * @param \Flownode\Scribe\Document\Element\Paragraph $paragraph
+   * @param \Flownode\Scribe\Element\Paragraph $paragraph
    * @return void
    */
-  public function addParagraph(\Flownode\Scribe\Document\Element\Paragraph $paragraph)
+  public function addParagraph(\Flownode\Scribe\Element\Paragraph $paragraph)
   {
     $attributes = array();
     $content    = $paragraph->getText();
@@ -52,10 +52,10 @@ class Formatter extends AbstractFormatter
 
   /**
    *
-   * @param \Flownode\Scribe\Document\Element\Title $title
+   * @param \Flownode\Scribe\Element\Title $title
    * @return void
    */
-  public function addTitle(\Flownode\Scribe\Document\Element\Title $title)
+  public function addTitle(\Flownode\Scribe\Element\Title $title)
   {
     $attributes = array('id' => $title->getId());
     $titleName = $title->getTitle();
@@ -70,10 +70,10 @@ class Formatter extends AbstractFormatter
 
   /**
    *
-   * @param \Flownode\Scribe\Document\Element\Image $image
+   * @param \Flownode\Scribe\Element\Image $image
    * @return void
    */
-  public function addImage(\Flownode\Scribe\Document\Element\Image $image)
+  public function addImage(\Flownode\Scribe\Element\Image $image)
   {
     $attributes = array();
     $src = $image->getSrc();
@@ -89,10 +89,10 @@ class Formatter extends AbstractFormatter
 
   /**
    *
-   * @param \Flownode\Scribe\Document\Element\Hr $hr
+   * @param \Flownode\Scribe\Element\Hr $hr
    * @return void
    */
-  public function addHr(\Flownode\Scribe\Document\Element\Hr $hr)
+  public function addHr(\Flownode\Scribe\Element\Hr $hr)
   {
     $attributes = array();
     if($rules = $hr->getRules())
@@ -105,10 +105,10 @@ class Formatter extends AbstractFormatter
 
   /**
    *
-   * @param \Flownode\Scribe\Document\Element\Link $link
+   * @param \Flownode\Scribe\Element\Link $link
    * @return void
    */
-  public function addLink(\Flownode\Scribe\Document\Element\Link $link)
+  public function addLink(\Flownode\Scribe\Element\Link $link)
   {
     $attributes = array();
     $href   = $link->getHref();
@@ -132,10 +132,10 @@ class Formatter extends AbstractFormatter
 
   /**
    *
-   * @param \Flownode\Scribe\Document\Element\Paragraph $grid
+   * @param \Flownode\Scribe\Element\Paragraph $grid
    * @return void
    */
-  public function addGrid(\Flownode\Scribe\Document\Element\Grid\Grid $grid)
+  public function addGrid(\Flownode\Scribe\Element\Grid\Grid $grid)
   {
 
     $table = $this->writer->open('table');
@@ -153,10 +153,10 @@ class Formatter extends AbstractFormatter
 
   /**
    *
-   * @param \Flownode\Scribe\Document\Element\TOC $toc
+   * @param \Flownode\Scribe\Element\TOC $toc
    * @return void
    */
-  public function addTOC(\Flownode\Scribe\Document\Element\TOC $toc)
+  public function addTOC(\Flownode\Scribe\Element\TOC $toc)
   {
     $node = $this->writer->open('div');
 

@@ -2,25 +2,27 @@
 /**
  * This file is part of the Flownode package
  *
- * (c) Laurent CALLAREC <lcallarec@gmail.com>
+ * (c) Laurent CALLAREC <l.callarec@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Flownode\Scribe\Document\Element;
+namespace Flownode\Scribe\Element;
 use
-  Flownode\Scribe\Document\Element\Element
+  Flownode\Scribe\Element\Element
 ;
 /**
+ * Write document footer
  *
- * @author Laurent CALLAREC <lcallarec@gmail.com>
+ * @author Laurent CALLAREC <l.callarec@gmail.com>
  */
-class Hr extends Element
+class Footer extends Element
 {
-  const TYPE = 'hr';
+  const TYPE = 'header';
+
   /**
    *
-   * @param mixed $text (string or array of strings)
+   * @param string $title
    */
   public function __construct($rules = 'default')
   {
@@ -28,3 +30,4 @@ class Hr extends Element
   }
 
 }
+
