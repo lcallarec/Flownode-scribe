@@ -154,7 +154,7 @@ class Formatter extends AbstractFormatter
    * @param \Flownode\Scribe\Document\Grid\Grid $grid
    * @return void
    */
-  public function addGrid(\Flownode\Scribe\Document\Grid\Grid $grid)
+  public function addGrid(\Flownode\Scribe\Document\Element\Grid\Grid $grid)
   {
 
     $formatter = new GridFormatter($this->writer, $this->decorator, $grid->getColumns(), $grid->getArrayCopy());
