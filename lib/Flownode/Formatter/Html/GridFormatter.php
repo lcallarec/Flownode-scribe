@@ -10,10 +10,6 @@
  */
 namespace Flownode\Formatter\Html;
 
-use
-  Flownode\Scribe\Decorator\Decorator
-;
-
 /**
  *
  * @author Laurent CALLAREC <l.callarec@gmail.com>
