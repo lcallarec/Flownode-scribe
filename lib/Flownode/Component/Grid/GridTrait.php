@@ -27,6 +27,18 @@ trait GridTrait
   }
 
   /**
+   * Add headers, only one set of headers can be set
+   * @param array $headers
+   * @return \Flownode\Scribe\Document\Grid\Grid
+   */
+  public function setColumn($column)
+  {
+    $this->columns[$column->getDataKey()] = $column;
+
+    return $this;
+  }
+
+  /**
    *
    * @param string $decorator
    */
