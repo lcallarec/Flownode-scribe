@@ -8,17 +8,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Flownode\Formatter\Tcpdf;
+namespace Flownode\Component\Tcpdf;
 
-use
-  Flownode\Scribe\Decorator\Decorator
-;
 
 /**
  *
  * @author Laurent CALLAREC <l.callarec@gmail.com>
  */
-class GridFormatter
+class Grid
 {
   /**
    *

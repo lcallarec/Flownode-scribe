@@ -21,7 +21,7 @@ class Grid
    *
    * @var Flownode\Writer\Html\Node
    */
-  protected $node;
+  protected $writer;
 
   protected $columns = array();
 
@@ -43,11 +43,13 @@ class Grid
    */
   protected $data;
 
-  public function __construct($data, $decorator)
+  public function __construct($data, $decorator, $writer)
   {
     $this->data      = $data;
     $this->decorator = $decorator;
-    $this->node      = new \Flownode\Writer\Html\Node('table');
+    $this->writer    = $writer;
+
+    $this->node = $this->writer->open('table');
   }
 
   /**
@@ -94,6 +96,8 @@ class Grid
       }
 
       $rows->close();
+
+      $this->node->close();
     }
   }
 
@@ -108,7 +112,7 @@ class Grid
 
   public function render()
   {
-    return $this->node->getText();
+    return $this->writer->getText();
   }
 
 }
