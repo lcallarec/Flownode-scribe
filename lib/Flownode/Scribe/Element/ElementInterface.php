@@ -8,9 +8,8 @@
  * file that was distributed with this source code.
  */
 namespace Flownode\Scribe\Element;
-use
-  Flownode\Formatter\FormatterInterface
-;
+
+use Flownode\Writer\WriterInterface;
 /**
  *
  * Common interface for all Elements
@@ -20,12 +19,12 @@ use
 interface ElementInterface
 {
   /**
-   * Set the element formatter
+   * Set the element Writer
    *
-   * @param \Flownode\Formatter\FormatterInterface $formatter
+   * @param WriterInterface $writer
    * @return self
    */
-  public function setFormatter(FormatterInterface $formatter);
+  public function setWriter(WriterInterface $writer);
 
 }
 

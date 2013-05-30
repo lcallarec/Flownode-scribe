@@ -12,7 +12,7 @@ namespace Flownode\Scribe;
 
 use
   Flownode\Scribe\Element\ElementInterface,
-  Flownode\Formatter\FormatterInterface,
+  Flownode\Writer\WriterInterface,
   Flownode\Scribe\Manager\Manager
 ;
 
@@ -42,10 +42,9 @@ class Document implements ElementInterface, \ArrayAccess
   protected $position = 0;
 
   /**
-   * \Flownode\Formatter\FormatterInterface
-   * @var FormatterInterface
+   * @var WriterInterface
    */
-  protected $formatter;
+  protected $writer;
 
   /**
    * Hash of manager
@@ -55,11 +54,11 @@ class Document implements ElementInterface, \ArrayAccess
 
   /**
    *
-   * @param \Flownode\Formatter\FormatterInterface $formatter
+   * @param WriterInterface $writer
    */
-  public function __construct(FormatterInterface $formatter = null)
+  public function __construct(WriterInterface $writer)
   {
-    $this->formatter = $formatter;
+    $this->writer = $writer;
   }
 
   /**
@@ -95,7 +94,7 @@ class Document implements ElementInterface, \ArrayAccess
     ksort($this->elements);
     foreach($this->elements as $position => $element)
     {
-      $this->formatter->format($element, $position);
+      $element->render(get_class($element));
     }
 
     return $this;
@@ -108,28 +107,27 @@ class Document implements ElementInterface, \ArrayAccess
    */
   public function getContent()
   {
-    return $this->formatter->getContent();
+    return $this->writer->getContent();
   }
 
   /**
-   *
-   * @param \Flownode\Formatter\FormatterInterface $formatter
+   * @param WriterInterface $writer
    * @return self
    */
-  public function setFormatter(FormatterInterface $formatter)
+  public function setWriter(WriterInterface $writer)
   {
-    $this->formatter = $formatter;
+    $this->writer = $writer;
 
     return $this;
   }
 
   /**
    *
-   * @return FormatterInterface $formatter
+   * @return WriterInterface $writer
    */
-  public function getFormatter()
+  public function getWriter()
   {
-    return $this->formatter;
+    return $this->writer;
   }
 
    /**
@@ -139,7 +137,7 @@ class Document implements ElementInterface, \ArrayAccess
    */
   public function setManager(Manager $manager)
   {
-    $manager->setFormatter($this->formatter);
+    //$manager->setFormatter($this->formatter);
     $this->managers[$manager::NAME] = $manager;
 
     return $this;

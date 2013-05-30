@@ -10,7 +10,7 @@
 namespace Flownode\Scribe\Element;
 
 use
-  Flownode\Formatter\FormatterInterface,
+  Flownode\Writer\WriterInterface,
   Flownode\Scribe\Document
 ;
 /**
@@ -21,11 +21,11 @@ use
 abstract class Element extends \ArrayObject implements ElementInterface
 {
   /**
-   * Formatter
+   * Writer
    *
-   * @var Flownode\Formatter\FormatterInterface
+   * @var WriterInterface
    */
-  protected $formatter = null;
+  protected $writer = null;
 
   /**
    * The (root) document containing this element
@@ -60,12 +60,12 @@ abstract class Element extends \ArrayObject implements ElementInterface
 
   /**
    *
-   * @param FormatterInterface $formatter
+   * @param WriterInterface $writer
    * @return self
    */
-  public function setFormatter(FormatterInterface $formatter)
+  public function setWriter(WriterInterface $writer)
   {
-    $this->formatter = $formatter;
+    $this->writer = $writer;
 
     return $this;
   }
@@ -80,7 +80,7 @@ abstract class Element extends \ArrayObject implements ElementInterface
   {
     $this->document = $document;
 
-    $this->setFormatter($document->getFormatter());
+    $this->setWriter($document->getWriter());
 
     return $this;
   }
@@ -152,5 +152,25 @@ abstract class Element extends \ArrayObject implements ElementInterface
   public function getFlowMode()
   {
     return $this->flowMode;
+  }
+
+  /**
+   * @TODO : Not very beautiful. Use a classmap instead, wrapped into a factory
+   * @param type $class
+   */
+  public function render($class)
+  {
+    $type = $this->writer->getType();
+
+    $baseClassName = explode('\\', $class);
+
+    $baseClassName = end($baseClassName);
+
+    $className = __NAMESPACE__.'\\Writable\\'.$type.'\\'.$baseClassName;
+
+    $element = new $className($this->writer, $this);
+
+    $element->render();
+
   }
 }
