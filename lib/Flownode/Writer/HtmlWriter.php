@@ -2,7 +2,7 @@
 namespace Flownode\Writer;
 
 use
-  Flownode\Scribe\Decorator\TcpdfDecorator
+  Flownode\Decorator\Decorator
 ;
 
 /**
@@ -18,22 +18,56 @@ use
  *
  * @author Laurent CALLAREC <l.callarec@gmail.com>
  */
-class HtmlWriter extends \Flownode\Writer\Html\Element
+class HtmlWriter extends \Flownode\Writer\Html\Element implements WriterInterface
 {
   /**
+   * @var string
+   */
+  const TYPE = 'Html';
+
+  /**
    * Decorator
-   * @var TcpdfDecorator
+   * @var Flownode\Scribe\Decorator\HtmlDecorator
    */
   protected $decorator;
+
   /**
    * @{inherit}
-   * @param TcpdfDecorator $decorator
+   * @param Decorator $decorator
    *
    */
-  public function __construct($decorator)
+  public function __construct(Decorator $decorator)
   {
     $this->decorator = $decorator;
 
     parent::__construct('flownode-root');
+  }
+
+  /**
+   * Get the nodes text
+   *
+   * @return string
+   */
+  public function getContent()
+  {
+    return $this->getText();
+  }
+
+  /**
+   * Get the Writer type
+   * @return string
+   */
+  public function getType()
+  {
+    return static::TYPE;
+  }
+
+  /**
+   *
+   * @return Flownode\Scribe\Decorator\HtmlDecorator
+   */
+  public function getDecorator()
+  {
+    return $this->decorator;
   }
 }
