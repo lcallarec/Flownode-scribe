@@ -23,6 +23,10 @@ class Grid
    */
   protected $writer;
 
+  /**
+   * Hash of Flownode\Component\Grid\Column
+   * @var array
+   */
   protected $columns = array();
 
   /**
@@ -32,14 +36,15 @@ class Grid
   protected $decorator;
 
   /**
-   *
-   * @var type
+   * row decorator(s)
+   * @var string | array
    */
   protected $rowDecorator = null;
 
   /**
+   * Data bound to the grid
    *
-   * @var type
+   * @var array
    */
   protected $data;
 
@@ -54,6 +59,7 @@ class Grid
 
   /**
    *
+   * @return void
    */
   public function addHeaders()
   {
@@ -66,7 +72,7 @@ class Grid
   }
 
   /**
-   *
+   *@return void
    */
   public function addRows()
   {
@@ -110,6 +116,10 @@ class Grid
     $this->rowDecorator = $rules;
   }
 
+  /**
+   * 
+   * @return string
+   */
   public function render()
   {
     return $this->writer->getText();

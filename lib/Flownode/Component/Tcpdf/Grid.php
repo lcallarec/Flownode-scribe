@@ -29,23 +29,49 @@ class Grid
    */
   protected $decorator;
 
+  /**
+   * row decorator(s)
+   * @var string | array
+   */
   protected $rowDecorator = null;
 
   /**
-   *
+   * Hash of Flownode\Component\Grid\Column
    * @var array
    */
   protected $columns = array();
 
+  /**
+   * Data bound to the grid
+   *
+   * @var array
+   */
   protected $datas;
 
+  /**
+   * Hash of auto-computed column widths, in user unit
+   * @var array
+   */
   protected $columnWidth = array();
+
+  /**
+   *
+   * Hash of auto-computed column heights, in user unit
+   * @var array
+   */
   protected $rowHeight   = array();
 
+  /**
+   * Grid width, in user unit
+   * @var int
+   */
   protected $width  = 0;
+
+  /**
+   * Grid height, in user unit
+   * @var int
+   */
   protected $height = 0;
-
-
 
   /**
    *
@@ -57,8 +83,8 @@ class Grid
   {
     $this->writer    = $writer;
     $this->decorator = $decorator;
-    $this->columns = $columns;
-    $this->datas   = $datas;
+    $this->columns   = $columns;
+    $this->data      = $datas;
   }
 
   /**
@@ -88,7 +114,7 @@ class Grid
   {
     $this->writer->setX($this->padding);
 
-    foreach($this->datas as $r => $row)
+    foreach($this->data as $r => $row)
     {
       if(null !== $this->rowDecorator)
       {
@@ -142,7 +168,7 @@ class Grid
       $this->columnWidth[$i] = ($this->writer->GetStringWidth($column->getName())+ $pad); //(mb_strlen($column['label']) * $this->sizeRatio) + $pad;
     }
 
-    foreach($this->datas as $r => $row)
+    foreach($this->data as $r => $row)
     {
       //Base row height
       $this->rowHeight[$r] = 0.1;
