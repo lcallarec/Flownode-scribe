@@ -18,41 +18,17 @@ use
  *
  * @author Laurent CALLAREC <l.callarec@gmail.com>
  */
-abstract class Writable implements WritableInterface
+interface WritableInterface
 {
-  /**
-   *
-   * @var WriterInterface
-   */
-  protected $writer;
-
-  /**
-   * Element
-   *
-   * @var ElementInterface
-   */
-  protected $element;
-
-  /**
-   *
-   * @var Flownode\Scribe\Decorator
-   */
-  protected $decorator;
-
   /**
    *
    * @param \Flownode\Writer\WriterInterface $writer
    * @param \Flownode\Scribe\Element\ElementInterface $element
    */
-  public function __construct(WriterInterface $writer, ElementInterface $element)
-  {
-    $this->writer    = $writer;
-    $this->decorator = $writer->getDecorator();
-    $this->element   = $element;
-  }
+  public function __construct(WriterInterface $writer, ElementInterface $element);
 
   /**
    * Build process
    */
-  abstract public function render();
+  public function render();
 }
