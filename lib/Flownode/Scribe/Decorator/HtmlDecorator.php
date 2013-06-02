@@ -17,52 +17,52 @@ class HtmlDecorator extends Decorator
 {
   public function __construct()
   {
-    $this->set('default', function($formatter, &$value) {
+    $this->set('default', function($writer, &$value) {
 
     });
 
-    $this->set('grid.default', function($formatter, &$value) {
+    $this->set('grid.default', function($writer, &$value) {
 
     });
 
-    $this->set('grid.reset', function($formatter, &$value) {
+    $this->set('grid.reset', function($writer, &$value) {
 
     });
 
-    $this->set('header.0', function($formatter, &$value) {
+    $this->set('header.0', function($writer, &$value) {
       return array('style' => 'color: red;');
     });
 
-    $this->set('header.1', function($formatter, &$value) {
+    $this->set('header.1', function($writer, &$value) {
       return array('style' => 'font-size: 1.5em; border-bottom: 1px solid grey;');
     });
 
-    $this->set('header.2', function($formatter, &$value) {
+    $this->set('header.2', function($writer, &$value) {
       return array('style' => 'font-size: 1.2em; border-bottom: 1px solid grey;');
     });
 
-    $this->set('header.3', function($formatter, &$value) {
+    $this->set('header.3', function($writer, &$value) {
       return array('style' => 'font-size: 1.5em; border-bottom: 1px solid grey;');
     });
 
-    $this->set('header.4', function($formatter, &$value) {
+    $this->set('header.4', function($writer, &$value) {
       return array('style' => 'font-size: 1.2em; border-bottom: 1px solid grey;');
     });
 
     //Styles
-    $this->set('strong', function($formatter, &$value) {
+    $this->set('strong', function($writer, &$value) {
       $value = '<strong>'.$value.'</strong>';
     });
 
-    $this->set('italic', function($formatter, &$value) {
+    $this->set('italic', function($writer, &$value) {
       $value = '<i>'.$value.'</i>';
     });
 
-    $this->set('underline', function($formatter, &$value) {
+    $this->set('underline', function($writer, &$value) {
       $value = '<u>'.$value.'</u>';
     });
 
-    $this->set('strikeout', function($formatter, &$value) {
+    $this->set('strikeout', function($writer, &$value) {
       $value = '<del>'.$value.'</del>';
     });
   }
