@@ -32,13 +32,13 @@ class Column
 
   /**
    *
-   * @var string
+   * @var string | array
    */
   protected $valueDecorator;
 
   /**
    *
-   * @var string
+   * @var string | array
    */
   protected $columnDecorator;
 
@@ -68,21 +68,38 @@ class Column
     $this->element = $element;
   }
 
+  /**
+   * Get the column name
+   * @return string
+   */
   public function getName()
   {
     return $this->name;
   }
 
+  /**
+   * Get the column decorator(s)
+   * @return string | array
+   */
   public function getColumnDecorator()
   {
     return $this->columnDecorator;
   }
 
+  /**
+   *
+   * @param $row
+   * @return mixed
+   */
   public function getValue($row)
   {
     return $row[$this->dataKey];
   }
 
+  /**
+   * Get the data key for this column
+   * @return mixed
+   */
   public function getDataKey()
   {
     return $this->dataKey;
