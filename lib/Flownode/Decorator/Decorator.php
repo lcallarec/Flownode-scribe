@@ -39,7 +39,7 @@ class Decorator
    * @param string | array $rules
    * @return array         Array of Closures
    */
-  function get($rules)
+  public function get($rules)
   {
     if(null !== $rules)
     {
