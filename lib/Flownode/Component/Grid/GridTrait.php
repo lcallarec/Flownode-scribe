@@ -17,9 +17,17 @@ trait GridTrait
 {
 
   /**
-   * Add headers, only one set of headers can be set
-   * @param array $headers
-   * @return \Flownode\Scribe\Document\Grid\Grid
+   * Build and add a column to the grid
+   *
+   * @see Flownode\Component\Grid\Column
+   *
+   * @param mixed $name
+   * @param mixed $columnId
+   * @param mixed $dataKey
+   * @param string | array $valueDecorator
+   * @param string | array $columnDecorator
+   * @param Element $element
+   * @return Column
    */
   public function addColumn($name, $columnId, $dataKey, $valueDecorator = null, $columnDecorator = null, $element = null)
   {
@@ -27,8 +35,9 @@ trait GridTrait
   }
 
   /**
-   * Add headers, only one set of headers can be set
-   * @param array $headers
+   * Add a previously instanciated column to the grid
+   *
+   * @param Column $column
    * @return \Flownode\Scribe\Document\Grid\Grid
    */
   public function setColumn($column)
@@ -39,21 +48,26 @@ trait GridTrait
   }
 
   /**
-   *
-   * @param string $decorator
+   * Set the row decorator
+   * @param string | array $decorator
    */
   public function setRowDecorator($decorator = null)
   {
     $this->rowDecorator = $decorator;
   }
 
+  /**
+   * Get the row decorator
+   *
+   * @return string | array
+   */
   public function getRowDecorator()
   {
     return $this->rowDecorator;
   }
 
   /**
-   *
+   * Get the hash of columns
    * @return Flownode\Component\Grid\Column
    */
   public function getColumns()
