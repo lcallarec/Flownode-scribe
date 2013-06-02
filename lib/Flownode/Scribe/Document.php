@@ -63,7 +63,7 @@ class Document implements ElementInterface, \ArrayAccess
 
   /**
    * Add a component to the document
-   *
+   * @TODO: the way positionning is handle is not good
    * @param \Flownode\Scribe\Element\ElementInterface $element
    * @param int $position   The element position ; is used to assign an element before another
    * @return \Flownode\Scribe\Element\ElementInterface
@@ -137,7 +137,6 @@ class Document implements ElementInterface, \ArrayAccess
    */
   public function setManager(Manager $manager)
   {
-    //$manager->setFormatter($this->formatter);
     $this->managers[$manager::NAME] = $manager;
 
     return $this;
@@ -156,6 +155,12 @@ class Document implements ElementInterface, \ArrayAccess
     return null;
   }
 
+  /**
+   *
+   * @param int $offset
+   * @param \Flownode\Scribe\Element\ElementInterface $value
+   * @return \Flownode\Scribe\Document
+   */
   public function offsetSet($offset, $value)
   {
     $this->position = $offset;
@@ -165,11 +170,21 @@ class Document implements ElementInterface, \ArrayAccess
     return $this;
   }
 
+  /**
+   *
+   * @param int $offset
+   * @return \Flownode\Scribe\Element\ElementInterface
+   */
   public function offsetGet($offset)
   {
     return $this->elements[$offset];
   }
 
+  /**
+   *
+   * @param int $offset
+   * @return \Flownode\Scribe\Document
+   */
   public function offsetUnset($offset)
   {
     unset($this->elements[$offset]);
@@ -177,6 +192,11 @@ class Document implements ElementInterface, \ArrayAccess
     return $this;
   }
 
+  /**
+   *
+   * @param int $offset
+   * @return bool
+   */
   public function offsetExists($offset)
   {
     return isset($this->elements[$offset]);
